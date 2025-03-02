@@ -1,0 +1,20 @@
+﻿@model App.Dtos.BlogDtos.BlogByIdResponseDto
+
+<div class="card p-4">
+    <h2 class="mb-3">@Model.Title</h2>
+    <p>@Model.Comment</p>
+</div>
+
+
+@await Component.InvokeAsync("_BlogDetailsSideBarTagCloudComponentPartial", new { blogId = ViewBag.blogId })
+
+
+@await Component.InvokeAsync("_BlogDetailsAuthorAboutComponentPartial", new { blogId = ViewBag.blogId })
+
+
+<div class="pt-5 mt-5">
+    @await Component.InvokeAsync("_BlogDetailsCommentComponentPartial")
+    <!-- END comment-list -->
+    @await Component.InvokeAsync("_BlogDetailsCreateCommentComponentPartial")
+
+</div>

@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/UILayout/OtherLayout.cshtml";
+}
+
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 ftco-animate">
+                @await Component.InvokeAsync("_BlogDetailsMainContentComponentPartial", new { id = ViewBag.blogId })
+                })
+
+            </div> <!-- .col-md-8 -->
+            <div class="col-md-4 sidebar ftco-animate">
+
+
+                @await Component.InvokeAsync("_BlogDetailsSideBarSearchBoxComponentPartial")
+               
+                @await Component.InvokeAsync("_BlogDetailsSideBarCategoriesComponentPartial")
+
+                @await Component.InvokeAsync("_BlogDetailsSideBarRecentBlogComponentPartial")
+
+                @await Component.InvokeAsync("_BlogDetailsSideBarTagCloudComponentPartial" , new { blogId = ViewBag.blogId })
+
+                @await Component.InvokeAsync("_BlogDetailsSideBarParagraphComponentPartial")
+
+            </div>
+
+        </div>
+    </div>
+</section> <!-- .section -->

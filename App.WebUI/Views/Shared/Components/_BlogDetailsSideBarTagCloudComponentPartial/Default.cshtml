@@ -1,0 +1,13 @@
+﻿@model List<App.Dtos.TagCloudDtos.TagCloudResponseDto>
+
+<div class="sidebar-box ftco-animate">
+    <h3>Bulut Etiketleri</h3>
+    <div class="tagcloud">
+        @foreach (var item in Model)
+        {
+
+            <a href="#" class="tag-cloud-link">@item.Title</a>
+        }
+
+    </div>
+</div>

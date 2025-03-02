@@ -1,0 +1,59 @@
+﻿@{ 
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Component.InvokeAsync("_HeaderComponentPartial")
+
+<body>
+
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @await Component.InvokeAsync("_NavbarComponentPartial")
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="vertical-menu">
+
+            @await Component.InvokeAsync("_LeftSideBarComponentPartial")
+
+        </div>
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-flex align-items-center justify-content-between">
+                                @*<h4 class="mb-0 font-size-18"></h4>
+
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
+                                            <li class="breadcrumb-item active">Starter</li>
+                                        </ol>
+                                    </div>*@
+                                @RenderBody()
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    @await Component.InvokeAsync("_FooterComponentPartial")
+    <div class="menu-overlay"></div>
+
+
+    @await Component.InvokeAsync("_ScriptsComponentPartial")
+
+
+</body>
+
+</html>
